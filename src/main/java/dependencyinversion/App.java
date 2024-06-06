@@ -3,10 +3,12 @@ package dependencyinversion;
 public class App {
     public static void main(String... brando) {
 
-        Car car = new Car();
-        car.start();
-        car.brake();
-        car.turnOff();
+        Carro car = new Carro();
+        car.arrancar();
+        car.frenar();
+        car.apagar();
+
+
     }
 
 }

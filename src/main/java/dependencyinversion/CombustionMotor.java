@@ -2,19 +2,21 @@ package dependencyinversion;
 
 public class CombustionMotor {
 
-    void start() {
+    void encender() {
         //SOME IMPLEMENTATION HERE
-        System.out.println("motor started");
+        System.out.println(this.getClass().getSimpleName() + " se encendio");
     }
 
-    void rest() {
+    void reposar() {
         //SOME IMPLEMENTATION HERE
-        System.out.println("motor resting");
+        System.out.println(this.getClass().getSimpleName() + " esta en reposo");
+
     }
 
-    void turnOff() {
+    void apagar() {
         //SOME IMPLEMENTATION HERE
-        System.out.println("motor off");
+        System.out.println(this.getClass().getSimpleName() + " esta apagado");
+
 
     }
 }

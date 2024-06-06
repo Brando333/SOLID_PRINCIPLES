@@ -8,20 +8,20 @@ public class App {
             CloudProvider amazon = new Amazon();
             CloudProvider dropbox = new DropBox();
 
-            amazon.storeFile("file1.txt", "Hello, Amazon!".getBytes());
-            System.out.println(new String(amazon.getFile("file1.txt")));
-            amazon.createServer("us-east-1");
-            List<String> amazonServers = amazon.listServers("us-east-1");
-            System.out.println("Amazon servers: " + amazonServers);
-            System.out.println("Amazon CDN: " + amazon.getCDNAddress());
+            amazon.almacenarArchivo("file1.txt", "Hola, Amazon!".getBytes());
+            System.out.println(new String(amazon.conseguirArchivo("file1.txt")));
+            amazon.crearServidor("us-east-1");
+            List<String> amazonServers = amazon.listarServidores("us-east-1");
+            System.out.println("Servidores de Amazon: " + amazonServers);
+            System.out.println("CDN de Amazon : " + amazon.obtenerDireccionCDN());
 
             System.out.println("==============================================");
-            dropbox.storeFile("file2.txt", "Hello, Dropbox!".getBytes());
-            System.out.println(new String(dropbox.getFile("file2.txt")));
-            dropbox.createServer("us-west-1");
-            List<String> dropboxServers = dropbox.listServers("us-west-1");
-            System.out.println("Dropbox servers: " + dropboxServers);
-            System.out.println("Dropbox CDN: " + dropbox.getCDNAddress());
+            dropbox.almacenarArchivo("file2.txt", "Hola, Dropbox!".getBytes());
+            System.out.println(new String(dropbox.conseguirArchivo("file2.txt")));
+            dropbox.crearServidor("us-west-1");
+            List<String> dropboxServers = dropbox.listarServidores("us-west-1");
+            System.out.println("Servidores de DropBox " + dropboxServers);
+            System.out.println("CDN de DropBox " + dropbox.obtenerDireccionCDN());
         } catch (CloudProviderException e) {
             e.printStackTrace();
         }

@@ -3,8 +3,11 @@ package singleresponsability;
 public class App {
 
     public static void main(String... brando) {
-        Employee emp = new Employee("Federico", "Salazar", 21, 8000);
+        Empleado emp = new Empleado("Federico", "Salazar", 21, 8000);
+        ////////mostrar los datos del empleado
+        System.out.println(emp.toString());
 
+        ///////
     }
 
 }

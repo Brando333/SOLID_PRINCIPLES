@@ -12,7 +12,7 @@ public class Amazon implements CloudProvider {
     private String cdnAddress = "https://amazon-cdn.example.com";
 
     @Override
-    public void storeFile(String name, byte[] data) throws CloudProviderException {
+    public void almacenarArchivo(String name, byte[] data) throws CloudProviderException {
         if (name == null || name.isEmpty()) {
             throw new CloudProviderException("Invalid file name.");
         }
@@ -24,7 +24,7 @@ public class Amazon implements CloudProvider {
     }
 
     @Override
-    public byte[] getFile(String name) throws CloudProviderException {
+    public byte[] conseguirArchivo(String name) throws CloudProviderException {
         if (name == null || name.isEmpty()) {
             throw new CloudProviderException("Invalid file name.");
         }
@@ -37,7 +37,7 @@ public class Amazon implements CloudProvider {
     }
 
     @Override
-    public void createServer(String region) throws CloudProviderException {
+    public void crearServidor(String region) throws CloudProviderException {
         if (region == null || region.isEmpty()) {
             throw new CloudProviderException("Invalid region.");
         }
@@ -46,7 +46,7 @@ public class Amazon implements CloudProvider {
     }
 
     @Override
-    public List<String> listServers(String region) throws CloudProviderException {
+    public List<String> listarServidores(String region) throws CloudProviderException {
         if (region == null || region.isEmpty()) {
             throw new CloudProviderException("Invalid region.");
         }
@@ -61,7 +61,7 @@ public class Amazon implements CloudProvider {
     }
 
     @Override
-    public String getCDNAddress() throws CloudProviderException {
+    public String obtenerDireccionCDN() throws CloudProviderException {
         System.out.println("Getting CDN address from Amazon.");
         return cdnAddress;
     }
