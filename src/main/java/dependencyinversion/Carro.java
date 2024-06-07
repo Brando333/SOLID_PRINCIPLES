@@ -1,21 +1,22 @@
 package dependencyinversion;
 
 public class Carro {
-    private CombustionMotor motorDeCombustion;
+    private Motor motor;
 
-    public Carro() {
-        this.motorDeCombustion = new CombustionMotor();
+    public Carro(Motor motor) {
+        this.motor = motor;
     }
 
     public void arrancar() {
-        motorDeCombustion.encender();
+
+        motor.encender();
     }
 
     public void frenar() {
-        motorDeCombustion.reposar();
+        motor.reposar();
     }
 
     public void apagar() {
-        motorDeCombustion.apagar();
+        motor.apagar();
     }
 }

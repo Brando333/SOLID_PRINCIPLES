@@ -1,6 +1,6 @@
 package dependencyinversion;
 
-public class CombustionMotor implements Motor {
+public class ElectricMotor implements Motor {
     @Override
     public void encender() {
         System.out.println(this.getClass().getSimpleName() + " se encendio");

@@ -3,7 +3,9 @@ package dependencyinversion;
 public class App {
     public static void main(String... brando) {
 
-        Carro car = new Carro();
+        Motor motorHidraulico = new HidraulicMotor();
+
+        Carro car = new Carro(motorHidraulico);
         car.arrancar();
         car.frenar();
         car.apagar();
