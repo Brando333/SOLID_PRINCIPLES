@@ -33,10 +33,11 @@ public class Empleado {
 
             query.executeUpdate();
 
+            System.out.println("Se a añadido al empleado "+ nombre);
             conexion.close();
             query.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(System.err);
             throw new RuntimeException(e);
         }
     }

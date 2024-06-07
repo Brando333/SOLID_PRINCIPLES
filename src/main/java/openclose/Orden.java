@@ -6,29 +6,37 @@ public class Orden {
     public double peso;
     public double precio;
     public int cantidad;
+    public String nombre;
 
 
-    public Orden(Envio envio, double peso, double precio, int cantidad) {
+    public Orden(Envio envio, double peso, double precio, int cantidad, String nombre) {
         this.envio = envio;
         this.peso = peso;
         this.precio = precio;
         this.cantidad = cantidad;
+        this.nombre = nombre;
     }
 
 
-    public double calcularCosto() {
+    public double calcularCostoTotal() {
         switch (envio) {
             case TERRESTRE -> {
+                double costoNeto = cantidad * precio;
                 if (cantidad >= 100) {
-                    return cantidad * precio;
+                    return costoNeto;
                 }
-                return Math.max(100, cantidad * precio + (cantidad * peso * 1.50));
+                double costoEnvio = cantidad * peso * 1.50;
+                return Math.max(170, costoNeto + costoEnvio);
             }
             case MARITIMO -> {
-                return Math.max(250, cantidad * precio + (cantidad * peso * 2.30));
+                double costoNeto = cantidad * precio;
+                double costoEnvio = cantidad * peso * 2.30;
+                return Math.max(250, costoNeto + costoEnvio);
             }
             case AEREO -> {
-                return Math.max(300, cantidad * precio + (cantidad * peso * 3.00));
+                double costoNeto = cantidad * precio;
+                double costoEnvio = cantidad * peso * 2.50;
+                return Math.max(300, costoNeto + costoEnvio);
             }
             default -> throw new RuntimeException("Tipo de envio invalido");
         }
@@ -42,6 +50,7 @@ public class Orden {
                ", peso=" + peso +
                ", precio=" + precio +
                ", cantidad=" + cantidad +
+               ", nombre='" + nombre + '\'' +
                '}';
     }
 }
