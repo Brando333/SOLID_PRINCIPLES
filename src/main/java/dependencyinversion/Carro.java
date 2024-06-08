@@ -1,7 +1,7 @@
 package dependencyinversion;
 
 public class Carro {
-    private CombustionMotor motorDeCombustion;
+    private final CombustionMotor motorDeCombustion;
 
     public Carro() {
         this.motorDeCombustion = new CombustionMotor();
