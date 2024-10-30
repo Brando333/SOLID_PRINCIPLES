@@ -10,7 +10,8 @@ public class App {
         emp.setEdad(29);
         emp.setSalario(12000);
 
-        emp.agregarEmpleado();
+//        emp.agregarEmpleado();
+        emp.mostrarEmpleados();
 
     }
 

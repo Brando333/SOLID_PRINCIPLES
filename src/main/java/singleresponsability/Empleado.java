@@ -33,7 +33,7 @@ public class Empleado {
 
             query.executeUpdate();
 
-            System.out.println("Se a añadido al empleado "+ nombre);
+            System.out.println("Se a añadido al empleado " + nombre);
             conexion.close();
             query.close();
         } catch (SQLException e) {
@@ -143,10 +143,10 @@ public class Empleado {
     @Override
     public String toString() {
         return "Empleado" +
-               "nombre='" + nombre + '\'' +
-               ", apellido='" + apellido + '\'' +
-               ", edad=" + edad +
-               ", salario=" + salario +
-               '}';
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", edad=" + edad +
+                ", salario=" + salario +
+                '}';
     }
 }
