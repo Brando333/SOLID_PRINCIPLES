@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class DataConexion {
 
-    static String url = "jdbc:mysql://mysql-3c3763b1-brandodbtest.e.aivencloud.com:12741";
+    static String url = "jdbc:mysql://mysql-3c3763b1-brandodbtest.e.aivencloud.com:12741/defaultdb";
     static String user = "avnadmin";
     static String password = "AVNS_W-_wHM4NXXC31MfqtLG";
 

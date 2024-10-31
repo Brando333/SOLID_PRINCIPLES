@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class EmpleadoDao {
 
-    private static Connection connection = DataConexion.getConnection();
+
     private Empleado empleado;
 
     public EmpleadoDao(Empleado empleado) {
@@ -13,6 +13,7 @@ public class EmpleadoDao {
 
     public void agregarEmpleado() {
         try {
+            Connection connection = DataConexion.getConnection();
             PreparedStatement query = connection.prepareStatement("insert into employee (name, lastName, age, salary) values(?,?,?,?)");
 
             query.setString(1, empleado.getNombre());
@@ -32,7 +33,7 @@ public class EmpleadoDao {
 
     public void eliminarEmpleado(int id) {
         try {
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://mysql-3c3763b1-brandodbtest.e.aivencloud.com:12741/defaultdb?user=avnadmin&password=AVNS_W-_wHM4NXXC31MfqtLG");
+            Connection conexion = DataConexion.getConnection();
             PreparedStatement preparedStatement = conexion.prepareStatement("delete from employee where id = ?");
 
             preparedStatement.setInt(1, id);
@@ -50,7 +51,7 @@ public class EmpleadoDao {
 
     public void actualizarEmpleado(int id, String newName) {
         try {
-
+            Connection connection = DataConexion.getConnection();
             PreparedStatement query = connection.prepareStatement("update employee set name = ? where id = ?");
 
             query.setString(1, newName);
@@ -68,7 +69,7 @@ public class EmpleadoDao {
 
     public static void mostrarEmpleados() {
         try {
-
+            Connection connection = DataConexion.getConnection();
             PreparedStatement query = connection.prepareStatement("select * from employee");
             ResultSet resultado = query.executeQuery();
 

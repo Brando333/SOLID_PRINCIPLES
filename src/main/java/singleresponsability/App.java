@@ -12,8 +12,10 @@ public class App {
         emp.setSalario(12000);
 
 
-        EmpleadoDao.mostrarEmpleados();
+        EmpleadoDao empleadoDao = new EmpleadoDao(emp);
+        empleadoDao.agregarEmpleado();
 
+        EmpleadoDao.mostrarEmpleados();
 
     }
 
